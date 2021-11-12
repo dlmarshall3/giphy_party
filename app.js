@@ -11,7 +11,7 @@ const baleeted = document.querySelector('#delete')
 
 form.addEventListener('submit', async function(e){
     e.preventDefault();
-    const res = await axios.get('http://api.giphy.com/v1/gifs/search', {
+    const res = await axios.get('https://api.giphy.com/v1/gifs/search', {
         params: {
             q: searchBar.value,
             api_key: token
