@@ -2,8 +2,8 @@ const token = "Rl5sN8oj6HlOtisslGhhMPCMJPvvtUAZ"
 const searchBar = document.querySelector('#searchBar');
 const submitBtn = document.querySelector('#submitBtn')
 const form = document.querySelector('#gifForm')
+const gifMainDiv = document.querySelector('#gifMainDiv')
 const gifCanvas = document.querySelector('#gifCanvas')
-
 const baleeted = document.querySelector('#delete')
 
 
@@ -20,10 +20,17 @@ form.addEventListener('submit', async function(e){
 
     let giphyArr = res.data.data.length;
     let randomIndex = Math.floor(Math.random() * giphyArr)
+
+    let gifRow = document.createElement('div');
+    gifRow.classList.add('col-6');
+    gifCanvas.append(gifRow);
+
     let gifImg = document.createElement('img');
     gifImg.src = res.data.data[`${randomIndex}`].images.original.url;
-    gifImg.classList.add('createdGif')
-    gifCanvas.prepend(gifImg)
+    gifImg.classList.add('createdGif');
+    gifImg.classList.add('img-fluid')
+    gifRow.append(gifImg);
+    
     searchBar.value = "";
 })
 

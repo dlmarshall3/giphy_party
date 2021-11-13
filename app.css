@@ -54,7 +54,7 @@ h1 {
     font-size: 24px;
 }
 
-#gifCanvas {
+#gifMainDiv {
     display: flex;
     align-items: center;
     justify-content: center;
